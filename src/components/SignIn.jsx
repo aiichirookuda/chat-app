@@ -44,10 +44,12 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
-export default function SignIn({ setName }) {
+export const SignIn = ({ setName }) => {
   const classes = useStyles();
   const [disabled, setDisabled] = useState(true);
   const [string, setString] = useState('');
+  const [isComposed, setIsComposed] = useState(false);
+  console.log({ disabled, string, isComposed });
 
   useEffect(() => {
     string ? setDisabled(false) : setDisabled(true);
@@ -74,9 +76,11 @@ export default function SignIn({ setName }) {
             onKeyDown={(e) => {
               if (e.key === 'Enter') {
                 e.preventDefault();
-                setName(string);
+                isComposed || setName(string);
               }
             }}
+            onCompositionStart={() => setIsComposed(true)}
+            onCompositionEnd={() => setIsComposed(false)}
           />
           <Button
             type="button"
@@ -96,4 +100,4 @@ export default function SignIn({ setName }) {
       </Box>
     </Container>
   );
-}
+};
