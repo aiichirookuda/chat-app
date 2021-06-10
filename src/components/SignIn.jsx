@@ -49,7 +49,6 @@ export const SignIn = ({ setName }) => {
   const [disabled, setDisabled] = useState(true);
   const [string, setString] = useState('');
   const [isComposed, setIsComposed] = useState(false);
-  console.log({ disabled, string, isComposed });
 
   useEffect(() => {
     string ? setDisabled(false) : setDisabled(true);
