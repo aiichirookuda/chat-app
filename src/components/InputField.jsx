@@ -15,7 +15,7 @@ export const InputField = ({ inputEl, name, setText, text }) => {
         if (isComposed) return;
         if (text === '') return;
         if (e.key === 'Enter') {
-          pushMessage({ name: 'あいいちろう', text });
+          pushMessage({ name, text });
           setText('');
           e.preventDefault();
         }
