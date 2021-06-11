@@ -8,6 +8,7 @@ const useStyles = makeStyles({
     display: 'grid',
     height: '100vh',
     gridTemplateRows: '1fr auto',
+    padding: '0 2%',
   },
 });
 
@@ -15,7 +16,7 @@ export const Main = ({ name }) => {
   const classes = useStyles();
   return (
     <div className={classes.root}>
-      <MessageList />
+      <MessageList nickname={name} />
       <MessageInputField name={name} />
     </div>
   );

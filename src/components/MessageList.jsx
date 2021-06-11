@@ -13,7 +13,7 @@ const useStyles = makeStyles({
   },
 });
 
-export const MessageList = () => {
+export const MessageList = ({ nickname }) => {
   const [messages, setMessages] = useState([]);
   const classes = useStyles();
 
@@ -45,6 +45,7 @@ export const MessageList = () => {
             name={name}
             text={text}
             isLastItem={isLastItem}
+            nickname={nickname}
           />
         );
       })}
